@@ -1,3 +1,9 @@
+import os
+from dotenv import load_dotenv
+load_dotenv()
+client_id = os.getenv("CLIENT_ID")
+client_secret = os.getenv("CLIENT_SECRET")
+
 def get_code():
     from urllib.parse import urlencode
     import secrets, webbrowser
@@ -84,7 +90,6 @@ def refresh_token():
     return json_response["access_token"]
 
 if __name__ == "__main__":
-    import os
     from dotenv import load_dotenv
 
     load_dotenv()
